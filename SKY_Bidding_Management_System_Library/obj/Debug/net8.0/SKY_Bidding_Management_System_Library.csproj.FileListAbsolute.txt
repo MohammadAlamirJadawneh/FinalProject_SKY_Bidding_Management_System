@@ -1,0 +1,14 @@
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\bin\Debug\net8.0\SKY_Bidding_Management_System_Library.deps.json
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\bin\Debug\net8.0\SKY_Bidding_Management_System_Library.runtimeconfig.json
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\bin\Debug\net8.0\SKY_Bidding_Management_System_Library.dll
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\bin\Debug\net8.0\SKY_Bidding_Management_System_Library.pdb
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\obj\Debug\net8.0\SKY_Bidding_Management_System_Library.csproj.AssemblyReference.cache
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\obj\Debug\net8.0\SKY_Bidding_Management_System_Library.GeneratedMSBuildEditorConfig.editorconfig
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\obj\Debug\net8.0\SKY_Bidding_Management_System_Library.AssemblyInfoInputs.cache
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\obj\Debug\net8.0\SKY_Bidding_Management_System_Library.AssemblyInfo.cs
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\obj\Debug\net8.0\SKY_Bidding_Management_System_Library.csproj.CoreCompileInputs.cache
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\obj\Debug\net8.0\SKY_Bidding_Management_System_Library.dll
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\obj\Debug\net8.0\refint\SKY_Bidding_Management_System_Library.dll
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\obj\Debug\net8.0\SKY_Bidding_Management_System_Library.pdb
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\obj\Debug\net8.0\SKY_Bidding_Management_System_Library.genruntimeconfig.cache
+D:\.net sky\Final Project\SKY_Bidding_Management_System\SKY_Bidding_Management_System_Library\obj\Debug\net8.0\ref\SKY_Bidding_Management_System_Library.dll
