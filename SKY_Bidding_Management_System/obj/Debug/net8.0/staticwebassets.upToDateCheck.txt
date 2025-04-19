@@ -1,0 +1,33 @@
+wwwroot\uploads\Bid_1_Documents (2).zip
+wwwroot\uploads\Bid_1_Documents (4).zip
+wwwroot\uploads\Bid_1_Documents (5).zip
+wwwroot\uploads\Bid_1_Documents (6).zip
+wwwroot\uploads\Bid_3_Documents.zip
+wwwroot\uploads\Bid_6_Documents.zip
+wwwroot\uploads\Bid_7_Documents (1).zip
+wwwroot\uploads\Bid_7_Documents.zip
+wwwroot\uploads\Bid_9_Documents (2).zip
+wwwroot\uploads\BidProposal_1 (1).txt
+wwwroot\uploads\BidProposal_1.txt
+wwwroot\uploads\BidSubmission_1 (1).txt
+wwwroot\uploads\BidSubmission_1 (3).txt
+wwwroot\uploads\BidSubmission_1 (4).txt
+wwwroot\uploads\BidSubmission_1 (6).txt
+wwwroot\uploads\BidSubmission_1 (7).txt
+wwwroot\uploads\BidSubmission_1.txt
+wwwroot\uploads\BuildingTender-Document.pdf
+wwwroot\uploads\response_1744239030531.json
+wwwroot\uploads\response_1744267514000.html
+wwwroot\uploads\Screenshot 2025-03-15 055618.png
+wwwroot\uploads\Sky Academy - Final Project-Round2 (1) (1) (1).pdf
+wwwroot\uploads\SupportingDocuments_1 (1).txt
+wwwroot\uploads\SupportingDocuments_1 (2).txt
+wwwroot\uploads\Tender_1_Documents (1).zip
+wwwroot\uploads\Tender_1_Documents (2).zip
+wwwroot\uploads\Tender_1_Documents (3).zip
+wwwroot\uploads\Tender_1_Documents (4).zip
+wwwroot\uploads\Tender_3_Documents.zip
+wwwroot\uploads\Tender_Eligibility_1.txt
+wwwroot\uploads\TenderDocument_ContactInfo_1 (3).txt
+wwwroot\uploads\TenderDocument_ContactInfo_5 (1).txt
+wwwroot\uploads\TenderDocument_ContactInfo_5.txt

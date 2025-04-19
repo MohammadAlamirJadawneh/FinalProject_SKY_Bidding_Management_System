@@ -1,0 +1,1486 @@
+[
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.AccountController",
+    "Method": "LogIn",
+    "RelativePath": "api/Account",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "SKY_Bidding_Management_System_Library.Data.DTOs.Account.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.AccountController",
+    "Method": "RegisterNewUser",
+    "RelativePath": "api/Account/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "SKY_Bidding_Management_System_Library.Data.DTOs.Account.dtoNewUser",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.AccountController",
+    "Method": "ResetWithEmailAndPhone",
+    "RelativePath": "api/Account/resetPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SKY_Bidding_Management_System_Library.Data.DTOs.Account.ResetPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidController",
+    "Method": "GetAllBids",
+    "RelativePath": "api/Bid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidController",
+    "Method": "InsertBid",
+    "RelativePath": "api/Bid",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TenderId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "SubmissionDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Files",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "TechnicalSummary",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FinancialProposalItems",
+        "Type": "System.Collections.Generic.List\u00601[[SKY_Bidding_Management_System_Library.Data.DTOs.FinancialProposalItem.FinancialProposalItemDto, SKY_Bidding_Management_System_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CompanyName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "RegistrationNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Phone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidController",
+    "Method": "GetBidBy",
+    "RelativePath": "api/Bid/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bidBy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidController",
+    "Method": "UpdateBid",
+    "RelativePath": "api/Bid/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "SKY_Bidding_Management_System_Library.SKY_Bidding_Management_System_CQRS.Commands.Bid_Commands.UpdateBidCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidController",
+    "Method": "DeleteBid",
+    "RelativePath": "api/Bid/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bidId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "tenderId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidController",
+    "Method": "DownloadSupportingDocumentsText",
+    "RelativePath": "api/Bid/download-supporting-documents-text/{bidId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bidId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidController",
+    "Method": "DownloadBidDocuments",
+    "RelativePath": "api/Bid/download/{bidId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bidId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidController",
+    "Method": "DownloadBidProposal",
+    "RelativePath": "api/Bid/downloadBidProposal/{bidid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bidid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidController",
+    "Method": "DownloadBidSubmissionDocument",
+    "RelativePath": "api/Bid/downloadBidSubmissionDocument/{bidid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bidid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidController",
+    "Method": "DownloadDeclaration",
+    "RelativePath": "api/Bid/downloadDeclaration",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "authorizedSignatory",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "submissionDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidDocumentController",
+    "Method": "InsertBidDocument",
+    "RelativePath": "api/BidDocument",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "BidDocumentFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "BidId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidDocumentController",
+    "Method": "GetAll",
+    "RelativePath": "api/BidDocument",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidDocumentController",
+    "Method": "UpdateBidDocument",
+    "RelativePath": "api/BidDocument/{BidDocumentId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bidDocumentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "BidDocumentId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "FileName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContentType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BidDocumentFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidDocumentController",
+    "Method": "Delete",
+    "RelativePath": "api/BidDocument/{BidDocumentId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "BidDocumentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidDocumentController",
+    "Method": "DownloadBidDocuments",
+    "RelativePath": "api/BidDocument/download/{BidDocumentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "BidDocumentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidEvaluationController",
+    "Method": "InsertBidEvaluations",
+    "RelativePath": "api/BidEvaluation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "BidEvaluationDto",
+        "Type": "SKY_Bidding_Management_System_Library.Data.DTOs.BidEvaluation.InsertBidEvaluationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidEvaluationController",
+    "Method": "GetBidEvaluationById",
+    "RelativePath": "api/BidEvaluation/{bidEvaluationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bidEvaluationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SKY_Bidding_Management_System_Library.Data.Models.BidEvaluation",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidEvaluationController",
+    "Method": "UpdateBidEvaluation",
+    "RelativePath": "api/BidEvaluation/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "SKY_Bidding_Management_System_Library.SKY_Bidding_Management_System_CQRS.Commands.BidEvaluationCommands.UpdateBidEvaluationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidEvaluationController",
+    "Method": "DeleteBidEvaluation",
+    "RelativePath": "api/BidEvaluation/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.BidEvaluationController",
+    "Method": "GetAllBidEvaluations",
+    "RelativePath": "api/BidEvaluation/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.PaymentTermsController",
+    "Method": "GetPaymentTerms",
+    "RelativePath": "api/PaymentTerms",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.PaymentTermsController",
+    "Method": "CreatePaymentTerm",
+    "RelativePath": "api/PaymentTerms",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paymentTermDto",
+        "Type": "SKY_Bidding_Management_System_Library.Data.DTOs.NewFolder.PaymentTermDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.PaymentTermsController",
+    "Method": "Update",
+    "RelativePath": "api/PaymentTerms/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "SKY_Bidding_Management_System_Library.SKY_Bidding_Management_System_CQRS.Commands.PaymentTermCommands.UpdatePaymentTermCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.PaymentTermsController",
+    "Method": "Delete",
+    "RelativePath": "api/PaymentTerms/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.PaymentTermsController",
+    "Method": "GetPaymentTermById",
+    "RelativePath": "api/PaymentTerms/GetPaymentTerm/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.SubmissionGuidelinesController",
+    "Method": "Create",
+    "RelativePath": "api/SubmissionGuidelines",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "guidelines",
+        "Type": "System.Collections.Generic.List\u00601[[SKY_Bidding_Management_System_Library.Data.DTOs.SubmissionGuideline.SubmissionGuidelineDto, SKY_Bidding_Management_System_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.SubmissionGuidelinesController",
+    "Method": "GetSubmissionGuidelines",
+    "RelativePath": "api/SubmissionGuidelines/GetSubmissionGuidelines/{tenderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderController",
+    "Method": "GetAllTenders",
+    "RelativePath": "api/Tender",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderController",
+    "Method": "InsertTender",
+    "RelativePath": "api/Tender",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TenderTitle",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenderDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenderBudget",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenderIssueDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenderClosingDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "EligibilityCriteria",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "IndustryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenderTypeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "LocationId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Files",
+        "Type": "Microsoft.AspNetCore.Http.IFormFileCollection",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderController",
+    "Method": "GetTenderById",
+    "RelativePath": "api/Tender/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderController",
+    "Method": "UpdateTender",
+    "RelativePath": "api/Tender/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "SKY_Bidding_Management_System_Library.SKY_Bidding_Management_System_CQRS.Commands.Tender_Commands.UpdateTenderCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderController",
+    "Method": "DeleteTender",
+    "RelativePath": "api/Tender/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderController",
+    "Method": "DownloadTenderDocuments",
+    "RelativePath": "api/Tender/download/{tenderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderController",
+    "Method": "DownloadTenderDocumentContactInfo",
+    "RelativePath": "api/Tender/DownloadTenderDocumentContactInfo/{tenderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderController",
+    "Method": "GenerateTenderOverview",
+    "RelativePath": "api/Tender/GenerateTenderOverview/{tenderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderController",
+    "Method": "GetEligibilityCriteria",
+    "RelativePath": "api/Tender/GetEligibilityCriteria/{tenderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderController",
+    "Method": "GetTenderScope",
+    "RelativePath": "api/Tender/GetTenderScope/{tenderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderController",
+    "Method": "GetOpenTenders",
+    "RelativePath": "api/Tender/open",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderController",
+    "Method": "RefreshTenderStatuses",
+    "RelativePath": "api/Tender/refresh-status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderController",
+    "Method": "SetEligibilityCriteria",
+    "RelativePath": "api/Tender/SetEligibilityCriteria",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "SKY_Bidding_Management_System_Library.SKY_Bidding_Management_System_CQRS.Commands.EligibilityCriteriaCommands.SetEligibilityCriteriaCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderAwardController",
+    "Method": "GetAll",
+    "RelativePath": "api/TenderAward",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderAwardController",
+    "Method": "Insert",
+    "RelativePath": "api/TenderAward",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderAwardDto",
+        "Type": "SKY_Bidding_Management_System_Library.Data.DTOs.TenderAward.InsertTenderAwardDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderAwardController",
+    "Method": "GetById",
+    "RelativePath": "api/TenderAward/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderAwardById",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderAwardController",
+    "Method": "Update",
+    "RelativePath": "api/TenderAward/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "SKY_Bidding_Management_System_Library.SKY_Bidding_Management_System_CQRS.Commands.TenderAwardCommands.UpdateTenderAwardCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderAwardController",
+    "Method": "Delete",
+    "RelativePath": "api/TenderAward/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderCategoryController",
+    "Method": "GetAllTenderCategorys",
+    "RelativePath": "api/TenderCategory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderCategoryController",
+    "Method": "InsertTenderCategorys",
+    "RelativePath": "api/TenderCategory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderCategoryDto",
+        "Type": "SKY_Bidding_Management_System_Library.Data.DTOs.TenderCategory.InsertTenderCategoryDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderCategoryController",
+    "Method": "UpdateTenderCategory",
+    "RelativePath": "api/TenderCategory/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "SKY_Bidding_Management_System_Library.SKY_Bidding_Management_System_CQRS.Commands.TenderCategory_Commands.UpdateTenderCategoryCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderCategoryController",
+    "Method": "DeleteTenderCategory",
+    "RelativePath": "api/TenderCategory/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderCategoryController",
+    "Method": "GetTenderCategoryById",
+    "RelativePath": "api/TenderCategory/{TenderCategoryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderCategoryById",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenderCategoryId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SKY_Bidding_Management_System_Library.Data.Models.TenderCategory",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SKY_Tenderding_Management_System.Controllers.TenderDocumentController",
+    "Method": "GetAll",
+    "RelativePath": "api/TenderDocument",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Tenderding_Management_System.Controllers.TenderDocumentController",
+    "Method": "InsertTenderDocument",
+    "RelativePath": "api/TenderDocument",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TenderDocumentFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenderId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Tenderding_Management_System.Controllers.TenderDocumentController",
+    "Method": "Delete",
+    "RelativePath": "api/TenderDocument/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TenderDocumentId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Tenderding_Management_System.Controllers.TenderDocumentController",
+    "Method": "UpdateTenderDocument",
+    "RelativePath": "api/TenderDocument/{TenderDocumentId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TenderDocumentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "TenderDocumentId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "FileName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContentType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenderDocumentFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Tenderding_Management_System.Controllers.TenderDocumentController",
+    "Method": "DownloadTenderDocuments",
+    "RelativePath": "api/TenderDocument/download/{tenderDocumentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderDocumentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderEvaluationController",
+    "Method": "GetAllTenderEvaluations",
+    "RelativePath": "api/TenderEvaluation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderEvaluationController",
+    "Method": "InsertTenderEvaluations",
+    "RelativePath": "api/TenderEvaluation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderEvaluationDto",
+        "Type": "SKY_Bidding_Management_System_Library.Data.DTOs.TenderEvaluation.InsertTenderEvaluationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderEvaluationController",
+    "Method": "UpdateTenderEvaluation",
+    "RelativePath": "api/TenderEvaluation/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "SKY_Bidding_Management_System_Library.SKY_Bidding_Management_System_CQRS.Commands.TenderEvaluation_Commands.UpdateTenderEvaluationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderEvaluationController",
+    "Method": "DeleteTenderEvaluation",
+    "RelativePath": "api/TenderEvaluation/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderEvaluationController",
+    "Method": "GetTenderEvaluationById",
+    "RelativePath": "api/TenderEvaluation/{TenderEvaluationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderEvaluationById",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenderEvaluationId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SKY_Bidding_Management_System_Library.Data.Models.TenderEvaluation",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderIndustryController",
+    "Method": "GetAllTenderIndustrys",
+    "RelativePath": "api/TenderIndustry",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderIndustryController",
+    "Method": "InsertTenderIndustrys",
+    "RelativePath": "api/TenderIndustry",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderIndustryDto",
+        "Type": "SKY_Bidding_Management_System_Library.Data.DTOs.TenderIndustry.InsertTenderIndustryDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderIndustryController",
+    "Method": "UpdateTenderIndustry",
+    "RelativePath": "api/TenderIndustry/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "SKY_Bidding_Management_System_Library.SKY_Bidding_Management_System_CQRS.Commands.TenderIndustry_Commands.UpdateTenderIndustryCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderIndustryController",
+    "Method": "DeleteTenderIndustry",
+    "RelativePath": "api/TenderIndustry/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderIndustryController",
+    "Method": "GetTenderIndustryById",
+    "RelativePath": "api/TenderIndustry/{TenderIndustryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderIndustryById",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenderIndustryId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SKY_Bidding_Management_System_Library.Data.Models.TenderIndustry",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderLocationController",
+    "Method": "GetAllTenderLocations",
+    "RelativePath": "api/TenderLocation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderLocationController",
+    "Method": "InsertTenderLocations",
+    "RelativePath": "api/TenderLocation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderLocationDto",
+        "Type": "SKY_Bidding_Management_System_Library.Data.DTOs.TenderLocation.InsertTenderLocationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderLocationController",
+    "Method": "UpdateTenderLocation",
+    "RelativePath": "api/TenderLocation/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "SKY_Bidding_Management_System_Library.SKY_Bidding_Management_System_CQRS.Commands.TenderLocation_Commands.UpdateTenderLocationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderLocationController",
+    "Method": "DeleteTenderLocation",
+    "RelativePath": "api/TenderLocation/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderLocationController",
+    "Method": "GetTenderLocationById",
+    "RelativePath": "api/TenderLocation/{TenderLocationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderLocationById",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenderLocationId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SKY_Bidding_Management_System_Library.Data.Models.TenderLocation",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderTypeController",
+    "Method": "GetAllTenderTypes",
+    "RelativePath": "api/TenderType",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderTypeController",
+    "Method": "InsertTenderTypes",
+    "RelativePath": "api/TenderType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderTypeDto",
+        "Type": "SKY_Bidding_Management_System_Library.Data.DTOs.TenderType.InsertTenderTypeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderTypeController",
+    "Method": "UpdateTenderType",
+    "RelativePath": "api/TenderType/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "SKY_Bidding_Management_System_Library.SKY_Bidding_Management_System_CQRS.Commands.TenderType_Commands.UpdateTenderTypeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderTypeController",
+    "Method": "DeleteTenderType",
+    "RelativePath": "api/TenderType/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SKY_Bidding_Management_System.Controllers.TenderTypeController",
+    "Method": "GetTenderTypeById",
+    "RelativePath": "api/TenderType/{TenderTypeId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenderTypeById",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenderTypeId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SKY_Bidding_Management_System_Library.Data.Models.TenderType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

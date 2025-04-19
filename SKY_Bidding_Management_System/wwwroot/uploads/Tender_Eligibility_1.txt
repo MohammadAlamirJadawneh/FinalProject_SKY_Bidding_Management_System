@@ -1,0 +1,8 @@
+Tender Eligibility Criteria
+----------------------------
+Bidders must meet the following criteria:
+1. Registered Company: Yes
+2. Minimum Experience: Yes
+3. Financial Stability: Yes
+4. Past Experience: Yes
+5. Compliance with Industry Standards: Yes

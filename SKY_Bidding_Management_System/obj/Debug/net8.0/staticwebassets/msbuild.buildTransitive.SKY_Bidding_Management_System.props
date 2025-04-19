@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\SKY_Bidding_Management_System.props" />
+</Project>

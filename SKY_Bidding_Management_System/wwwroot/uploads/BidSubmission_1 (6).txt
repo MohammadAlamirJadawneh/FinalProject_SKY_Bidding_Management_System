@@ -1,0 +1,11 @@
+
+Bid Submission Document
+=======================================
+
+Company Name:          ABC Corp
+Registration Number:   ABC123456
+Address:               123 Business St, City, Country
+Email:                 contact@abccorp.com
+Phone:                 123-456-7890
+
+ 

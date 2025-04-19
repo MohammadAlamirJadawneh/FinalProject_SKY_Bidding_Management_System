@@ -1,0 +1,3529 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Bidding Management System",
+    "description": "Sky Academy – Round 2 (Backend training)",
+    "contact": {
+      "name": "Mohammad Alamir Jadawneh",
+      "url": "https://www.skyits.com",
+      "email": "Jadawneh1@gmail.com"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Account/Register": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/dtoNewUser"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/dtoNewUser"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/dtoNewUser"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/dtoNewUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Account": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Account/resetPassword": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bid": {
+      "get": {
+        "tags": [
+          "Bid"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Bid"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "TenderId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "SubmissionDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Files": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  },
+                  "TechnicalSummary": {
+                    "type": "string"
+                  },
+                  "FinancialProposalItems": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/FinancialProposalItemDto"
+                    }
+                  },
+                  "CompanyName": {
+                    "type": "string"
+                  },
+                  "RegistrationNumber": {
+                    "type": "string"
+                  },
+                  "Address": {
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string"
+                  },
+                  "Phone": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "TenderId": {
+                  "style": "form"
+                },
+                "SubmissionDate": {
+                  "style": "form"
+                },
+                "Files": {
+                  "style": "form"
+                },
+                "TechnicalSummary": {
+                  "style": "form"
+                },
+                "FinancialProposalItems": {
+                  "style": "form"
+                },
+                "CompanyName": {
+                  "style": "form"
+                },
+                "RegistrationNumber": {
+                  "style": "form"
+                },
+                "Address": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "Phone": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bid/{id}": {
+      "get": {
+        "tags": [
+          "Bid"
+        ],
+        "parameters": [
+          {
+            "name": "bidBy",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Bid"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBidCommand"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBidCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBidCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBidCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Bid"
+        ],
+        "parameters": [
+          {
+            "name": "bidId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "tenderId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bid/download/{bidId}": {
+      "get": {
+        "tags": [
+          "Bid"
+        ],
+        "parameters": [
+          {
+            "name": "bidId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bid/downloadBidSubmissionDocument/{bidid}": {
+      "get": {
+        "tags": [
+          "Bid"
+        ],
+        "parameters": [
+          {
+            "name": "bidid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bid/downloadBidProposal/{bidid}": {
+      "get": {
+        "tags": [
+          "Bid"
+        ],
+        "parameters": [
+          {
+            "name": "bidid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bid/download-supporting-documents-text/{bidId}": {
+      "get": {
+        "tags": [
+          "Bid"
+        ],
+        "parameters": [
+          {
+            "name": "bidId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bid/downloadDeclaration": {
+      "get": {
+        "tags": [
+          "Bid"
+        ],
+        "parameters": [
+          {
+            "name": "companyName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorizedSignatory",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "submissionDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BidDocument": {
+      "post": {
+        "tags": [
+          "BidDocument"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "BidDocumentFile": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "BidId": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "BidDocumentFile": {
+                  "style": "form"
+                },
+                "BidId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "BidDocument"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BidDocument/{BidDocumentId}": {
+      "put": {
+        "tags": [
+          "BidDocument"
+        ],
+        "parameters": [
+          {
+            "name": "bidDocumentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "BidDocumentId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "FileName": {
+                    "type": "string"
+                  },
+                  "ContentType": {
+                    "type": "string"
+                  },
+                  "BidDocumentFile": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "BidDocumentId": {
+                  "style": "form"
+                },
+                "FileName": {
+                  "style": "form"
+                },
+                "ContentType": {
+                  "style": "form"
+                },
+                "BidDocumentFile": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "BidDocument"
+        ],
+        "parameters": [
+          {
+            "name": "BidDocumentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BidDocument/download/{BidDocumentId}": {
+      "get": {
+        "tags": [
+          "BidDocument"
+        ],
+        "parameters": [
+          {
+            "name": "BidDocumentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BidEvaluation/GetAll": {
+      "get": {
+        "tags": [
+          "BidEvaluation"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BidEvaluation/{bidEvaluationId}": {
+      "get": {
+        "tags": [
+          "BidEvaluation"
+        ],
+        "parameters": [
+          {
+            "name": "bidEvaluationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidEvaluation"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidEvaluation"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidEvaluation"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/BidEvaluation": {
+      "post": {
+        "tags": [
+          "BidEvaluation"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertBidEvaluationDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertBidEvaluationDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertBidEvaluationDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertBidEvaluationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BidEvaluation/{id}": {
+      "put": {
+        "tags": [
+          "BidEvaluation"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBidEvaluationCommand"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBidEvaluationCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBidEvaluationCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBidEvaluationCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "BidEvaluation"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PaymentTerms": {
+      "get": {
+        "tags": [
+          "PaymentTerms"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PaymentTerms"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentTermDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentTermDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentTermDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentTermDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PaymentTerms/GetPaymentTerm/{id}": {
+      "get": {
+        "tags": [
+          "PaymentTerms"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PaymentTerms/{id}": {
+      "put": {
+        "tags": [
+          "PaymentTerms"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePaymentTermCommand"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePaymentTermCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePaymentTermCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePaymentTermCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PaymentTerms"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SubmissionGuidelines/GetSubmissionGuidelines/{tenderId}": {
+      "get": {
+        "tags": [
+          "SubmissionGuidelines"
+        ],
+        "parameters": [
+          {
+            "name": "tenderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SubmissionGuidelines": {
+      "post": {
+        "tags": [
+          "SubmissionGuidelines"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubmissionGuidelineDto"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubmissionGuidelineDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubmissionGuidelineDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SubmissionGuidelineDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tender": {
+      "get": {
+        "tags": [
+          "Tender"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Tender"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "TenderTitle": {
+                    "type": "string"
+                  },
+                  "TenderDescription": {
+                    "type": "string"
+                  },
+                  "TenderBudget": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "TenderIssueDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "TenderClosingDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Email": {
+                    "type": "string"
+                  },
+                  "EligibilityCriteria": {
+                    "type": "string"
+                  },
+                  "CategoryId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "IndustryId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TenderTypeId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "LocationId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Files": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "TenderTitle": {
+                  "style": "form"
+                },
+                "TenderDescription": {
+                  "style": "form"
+                },
+                "TenderBudget": {
+                  "style": "form"
+                },
+                "TenderIssueDate": {
+                  "style": "form"
+                },
+                "TenderClosingDate": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "EligibilityCriteria": {
+                  "style": "form"
+                },
+                "CategoryId": {
+                  "style": "form"
+                },
+                "IndustryId": {
+                  "style": "form"
+                },
+                "TenderTypeId": {
+                  "style": "form"
+                },
+                "LocationId": {
+                  "style": "form"
+                },
+                "Files": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tender/{id}": {
+      "get": {
+        "tags": [
+          "Tender"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Tender"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderCommand"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Tender"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tender/refresh-status": {
+      "put": {
+        "tags": [
+          "Tender"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tender/open": {
+      "get": {
+        "tags": [
+          "Tender"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tender/download/{tenderId}": {
+      "get": {
+        "tags": [
+          "Tender"
+        ],
+        "parameters": [
+          {
+            "name": "tenderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tender/GenerateTenderOverview/{tenderId}": {
+      "get": {
+        "tags": [
+          "Tender"
+        ],
+        "parameters": [
+          {
+            "name": "tenderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tender/GetTenderScope/{tenderId}": {
+      "get": {
+        "tags": [
+          "Tender"
+        ],
+        "parameters": [
+          {
+            "name": "tenderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tender/SetEligibilityCriteria": {
+      "post": {
+        "tags": [
+          "Tender"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetEligibilityCriteriaCommand"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetEligibilityCriteriaCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetEligibilityCriteriaCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetEligibilityCriteriaCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tender/GetEligibilityCriteria/{tenderId}": {
+      "get": {
+        "tags": [
+          "Tender"
+        ],
+        "parameters": [
+          {
+            "name": "tenderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tender/DownloadTenderDocumentContactInfo/{tenderId}": {
+      "get": {
+        "tags": [
+          "Tender"
+        ],
+        "parameters": [
+          {
+            "name": "tenderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderAward": {
+      "get": {
+        "tags": [
+          "TenderAward"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TenderAward"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderAwardDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderAwardDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderAwardDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderAwardDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderAward/{id}": {
+      "get": {
+        "tags": [
+          "TenderAward"
+        ],
+        "parameters": [
+          {
+            "name": "tenderAwardById",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "TenderAward"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderAwardCommand"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderAwardCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderAwardCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderAwardCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TenderAward"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderCategory": {
+      "get": {
+        "tags": [
+          "TenderCategory"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TenderCategory"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderCategoryDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderCategoryDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderCategoryDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderCategoryDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderCategory/{TenderCategoryId}": {
+      "get": {
+        "tags": [
+          "TenderCategory"
+        ],
+        "parameters": [
+          {
+            "name": "tenderCategoryById",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "TenderCategoryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderCategory"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderCategory"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderCategory"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TenderCategory/{id}": {
+      "put": {
+        "tags": [
+          "TenderCategory"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderCategoryCommand"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderCategoryCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderCategoryCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderCategoryCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TenderCategory"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderDocument": {
+      "get": {
+        "tags": [
+          "TenderDocument"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TenderDocument"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "TenderDocumentFile": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "TenderId": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "TenderDocumentFile": {
+                  "style": "form"
+                },
+                "TenderId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderDocument/download/{tenderDocumentId}": {
+      "get": {
+        "tags": [
+          "TenderDocument"
+        ],
+        "parameters": [
+          {
+            "name": "tenderDocumentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderDocument/{TenderDocumentId}": {
+      "put": {
+        "tags": [
+          "TenderDocument"
+        ],
+        "parameters": [
+          {
+            "name": "TenderDocumentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "TenderDocumentId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "FileName": {
+                    "type": "string"
+                  },
+                  "ContentType": {
+                    "type": "string"
+                  },
+                  "TenderDocumentFile": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "TenderDocumentId": {
+                  "style": "form"
+                },
+                "FileName": {
+                  "style": "form"
+                },
+                "ContentType": {
+                  "style": "form"
+                },
+                "TenderDocumentFile": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderDocument/{id}": {
+      "delete": {
+        "tags": [
+          "TenderDocument"
+        ],
+        "parameters": [
+          {
+            "name": "TenderDocumentId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderEvaluation": {
+      "get": {
+        "tags": [
+          "TenderEvaluation"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TenderEvaluation"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderEvaluationDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderEvaluationDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderEvaluationDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderEvaluationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderEvaluation/{TenderEvaluationId}": {
+      "get": {
+        "tags": [
+          "TenderEvaluation"
+        ],
+        "parameters": [
+          {
+            "name": "tenderEvaluationById",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "TenderEvaluationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderEvaluation"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderEvaluation"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderEvaluation"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TenderEvaluation/{id}": {
+      "put": {
+        "tags": [
+          "TenderEvaluation"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderEvaluationCommand"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderEvaluationCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderEvaluationCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderEvaluationCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TenderEvaluation"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderIndustry": {
+      "get": {
+        "tags": [
+          "TenderIndustry"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TenderIndustry"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderIndustryDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderIndustryDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderIndustryDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderIndustryDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderIndustry/{TenderIndustryId}": {
+      "get": {
+        "tags": [
+          "TenderIndustry"
+        ],
+        "parameters": [
+          {
+            "name": "tenderIndustryById",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "TenderIndustryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderIndustry"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderIndustry"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderIndustry"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TenderIndustry/{id}": {
+      "put": {
+        "tags": [
+          "TenderIndustry"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderIndustryCommand"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderIndustryCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderIndustryCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderIndustryCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TenderIndustry"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderLocation": {
+      "get": {
+        "tags": [
+          "TenderLocation"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TenderLocation"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderLocationDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderLocationDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderLocationDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderLocationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderLocation/{TenderLocationId}": {
+      "get": {
+        "tags": [
+          "TenderLocation"
+        ],
+        "parameters": [
+          {
+            "name": "tenderLocationById",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "TenderLocationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderLocation"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderLocation"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderLocation"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TenderLocation/{id}": {
+      "put": {
+        "tags": [
+          "TenderLocation"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderLocationCommand"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderLocationCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderLocationCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderLocationCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TenderLocation"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderType": {
+      "get": {
+        "tags": [
+          "TenderType"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TenderType"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderTypeDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderTypeDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderTypeDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertTenderTypeDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TenderType/{TenderTypeId}": {
+      "get": {
+        "tags": [
+          "TenderType"
+        ],
+        "parameters": [
+          {
+            "name": "tenderTypeById",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "TenderTypeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderType"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderType"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TenderType"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TenderType/{id}": {
+      "put": {
+        "tags": [
+          "TenderType"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderTypeCommand"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderTypeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderTypeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenderTypeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TenderType"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AppUser": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "normalizedUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "normalizedEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailConfirmed": {
+            "type": "boolean"
+          },
+          "passwordHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "securityStamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "concurrencyStamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumberConfirmed": {
+            "type": "boolean"
+          },
+          "twoFactorEnabled": {
+            "type": "boolean"
+          },
+          "lockoutEnd": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lockoutEnabled": {
+            "type": "boolean"
+          },
+          "accessFailedCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Bid": {
+        "type": "object",
+        "properties": {
+          "bidId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "registrationNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bidderId": {
+            "type": "string",
+            "nullable": true
+          },
+          "submissionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "financialProposalItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FinancialProposalItem"
+            },
+            "nullable": true
+          },
+          "technicalSummary": {
+            "type": "string",
+            "nullable": true
+          },
+          "bidder": {
+            "$ref": "#/components/schemas/AppUser"
+          },
+          "tender": {
+            "$ref": "#/components/schemas/Tender"
+          },
+          "bidDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BidDocument"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BidDocument": {
+        "type": "object",
+        "properties": {
+          "bidDocumentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bidDocumentName": {
+            "type": "string",
+            "nullable": true
+          },
+          "bidDocumentContentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "bidDocumentData": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "bidDocumentUploadedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "bidId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bid": {
+            "$ref": "#/components/schemas/Bid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BidEvaluation": {
+        "type": "object",
+        "properties": {
+          "bidEvaluationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bidId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bidEvaluationScore": {
+            "type": "number",
+            "format": "double"
+          },
+          "bidEvaluationNotes": {
+            "type": "string",
+            "nullable": true
+          },
+          "evaluatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "bid": {
+            "$ref": "#/components/schemas/Bid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FinancialProposalItem": {
+        "type": "object",
+        "properties": {
+          "financialProposalItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "itemDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unitPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalPrice": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "bidId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bid": {
+            "$ref": "#/components/schemas/Bid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FinancialProposalItemDto": {
+        "type": "object",
+        "properties": {
+          "itemDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unitPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalPrice": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InsertBidEvaluationDto": {
+        "type": "object",
+        "properties": {
+          "bidId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bidEvaluationScore": {
+            "type": "number",
+            "format": "double"
+          },
+          "bidEvaluationNotes": {
+            "type": "string",
+            "nullable": true
+          },
+          "evaluatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InsertTenderAwardDto": {
+        "type": "object",
+        "properties": {
+          "tenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bidId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "awardDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "awardStatus": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InsertTenderCategoryDto": {
+        "required": [
+          "tenderCategoryName"
+        ],
+        "type": "object",
+        "properties": {
+          "tenderCategoryName": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InsertTenderEvaluationDto": {
+        "type": "object",
+        "properties": {
+          "tenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scoreTenderEvaluation": {
+            "type": "number",
+            "format": "double"
+          },
+          "tenderEvaluationNotes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InsertTenderIndustryDto": {
+        "required": [
+          "tenderIndustryName"
+        ],
+        "type": "object",
+        "properties": {
+          "tenderIndustryName": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InsertTenderLocationDto": {
+        "required": [
+          "tenderLocationName"
+        ],
+        "type": "object",
+        "properties": {
+          "tenderLocationName": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InsertTenderTypeDto": {
+        "required": [
+          "tenderTypeName"
+        ],
+        "type": "object",
+        "properties": {
+          "tenderTypeName": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginDto": {
+        "required": [
+          "password",
+          "userName"
+        ],
+        "type": "object",
+        "properties": {
+          "userName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentTermDto": {
+        "type": "object",
+        "properties": {
+          "paymentTermId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paymentSchedule": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "penaltiesForDelays": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResetPasswordDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "newPassword": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetEligibilityCriteriaCommand": {
+        "type": "object",
+        "properties": {
+          "tenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isRegisteredCompany": {
+            "type": "boolean"
+          },
+          "hasMinimumExperience": {
+            "type": "boolean"
+          },
+          "isFinanciallyStable": {
+            "type": "boolean"
+          },
+          "hasPastExperience": {
+            "type": "boolean"
+          },
+          "compliesWithIndustryStandards": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubmissionGuideline": {
+        "type": "object",
+        "properties": {
+          "submissionGuidelineId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "requiredDocument": {
+            "type": "string",
+            "nullable": true
+          },
+          "technicalProposal": {
+            "type": "string",
+            "nullable": true
+          },
+          "financialProposal": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyProfile": {
+            "type": "string",
+            "nullable": true
+          },
+          "tender": {
+            "$ref": "#/components/schemas/Tender"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubmissionGuidelineDto": {
+        "type": "object",
+        "properties": {
+          "tenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "requiredDocument": {
+            "type": "string",
+            "nullable": true
+          },
+          "technicalProposal": {
+            "type": "string",
+            "nullable": true
+          },
+          "financialProposal": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyProfile": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Tender": {
+        "type": "object",
+        "properties": {
+          "tenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderIssuedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenderTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenderDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenderBudget": {
+            "type": "number",
+            "format": "double"
+          },
+          "tenderIssueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tenderClosingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tenderStatus": {
+            "$ref": "#/components/schemas/TenderStatusEnum"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "nullable": true
+          },
+          "eligibilityCriteria": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "industryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "locationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderUser": {
+            "$ref": "#/components/schemas/AppUser"
+          },
+          "tenderIndustry": {
+            "$ref": "#/components/schemas/TenderIndustry"
+          },
+          "tenderCategory": {
+            "$ref": "#/components/schemas/TenderCategory"
+          },
+          "tenderType": {
+            "$ref": "#/components/schemas/TenderType"
+          },
+          "tenderLocation": {
+            "$ref": "#/components/schemas/TenderLocation"
+          },
+          "tenderDocument": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TenderDocument"
+            },
+            "nullable": true
+          },
+          "tenderEvaluations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TenderEvaluation"
+            },
+            "nullable": true
+          },
+          "submissionGuidelines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubmissionGuideline"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TenderCategory": {
+        "type": "object",
+        "properties": {
+          "tenderCategoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderCategoryName": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tender"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TenderDocument": {
+        "type": "object",
+        "properties": {
+          "tenderDocumentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderDocumentName": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenderDocumentData": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "tenderDocumentContentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenderDocumentUploadedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "documentContent": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tender": {
+            "$ref": "#/components/schemas/Tender"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TenderEvaluation": {
+        "type": "object",
+        "properties": {
+          "tenderEvaluationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scoreTenderEvaluation": {
+            "type": "number",
+            "format": "double"
+          },
+          "tenderEvaluationNotes": {
+            "type": "string",
+            "nullable": true
+          },
+          "tender": {
+            "$ref": "#/components/schemas/Tender"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TenderIndustry": {
+        "type": "object",
+        "properties": {
+          "tenderIndustryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderIndustryName": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tender"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TenderLocation": {
+        "type": "object",
+        "properties": {
+          "tenderLocationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderLocationName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TenderStatusEnum": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "TenderType": {
+        "type": "object",
+        "properties": {
+          "tenderTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderTypeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tender"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateBidCommand": {
+        "type": "object",
+        "properties": {
+          "bidId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "submissionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "bidDocumentIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "technicalSummary": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "registrationNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateBidEvaluationCommand": {
+        "type": "object",
+        "properties": {
+          "bidEvaluationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bidId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bidEvaluationScore": {
+            "type": "number",
+            "format": "double"
+          },
+          "bidEvaluationNotes": {
+            "type": "string",
+            "nullable": true
+          },
+          "evaluatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdatePaymentTermCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paymentSchedule": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "penaltiesForDelays": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateTenderAwardCommand": {
+        "type": "object",
+        "properties": {
+          "tenderAwardId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bidId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "awardDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "awardStatus": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateTenderCategoryCommand": {
+        "type": "object",
+        "properties": {
+          "tenderCategoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderCategoryName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateTenderCommand": {
+        "type": "object",
+        "properties": {
+          "tenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenderDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenderBudget": {
+            "type": "number",
+            "format": "double"
+          },
+          "tenderIssueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tenderClosingDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "eligibilityCriteria": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "industryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "locationId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateTenderEvaluationCommand": {
+        "type": "object",
+        "properties": {
+          "tenderEvaluationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scoreTenderEvaluation": {
+            "type": "number",
+            "format": "double"
+          },
+          "tenderEvaluationNotes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateTenderIndustryCommand": {
+        "type": "object",
+        "properties": {
+          "tenderIndustryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderIndustryName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateTenderLocationCommand": {
+        "type": "object",
+        "properties": {
+          "tenderLocationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderLocationName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateTenderTypeCommand": {
+        "type": "object",
+        "properties": {
+          "tenderTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenderTypeName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "dtoNewUser": {
+        "required": [
+          "email",
+          "password",
+          "userName"
+        ],
+        "type": "object",
+        "properties": {
+          "userName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Enter The JWT Key",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

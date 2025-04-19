@@ -1,0 +1,13 @@
+Technical Proposal Summary
+=======================================
+This is a technical proposal summary for ABC Corp's bid.
+
+Financial Proposal
+=======================================
+Item Description      Quantity    Unit Price    Total Price
+------------------------------------------------------------
+Item 1 Description   10         C-12 $500.00
+Item 2 Description   5          C-12 $500.00
+------------------------------------------------------------
+Total Bid Amount: $1,000.00
+
